@@ -1,0 +1,101 @@
+  <div class="nav_wrapper">
+      <ul>
+        <p></p>
+        <li>
+          <a href="#/Browser">
+            <div class="nav_div">
+              <i class="material-icons md-48">store</i> <span class="nav_text">Home</span>
+            </div>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="#/Articles">
+            <div class="nav_div">
+              <i class="material-icons md-48">subject</i> <span class="nav_text">ARTICLES</span>
+            </div>
+          </a>
+        </li>
+       
+        <li>
+          <a href="#/Narrators">
+            <div class="nav_div">
+              <i class="material-icons md-48">hearing</i> <span class="nav_text">NARRATORS</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#/YourNarrations">
+            <div class="nav_div">
+              <i class="material-icons md-48">record_voice_over</i> <span class="nav_text">YOUR NARRATIONS</span>
+            </div>
+          </a>
+        </li>
+		 <li>
+          <a href="#/login">
+            <div class="nav_div">
+              <i class="material-icons md-48">perm_identity</i> <span class="nav_text">{{userStaus}}</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+<div class="page-sides">
+   <div class="narrations_header">
+      <p>Narrations</p>
+    </div>
+    <div class="narrations_list">
+      <div class="narrations_headers">
+        <div class="nheader">
+          <p>NARRATIONS</p>
+        </div>
+        <div class="nheaderlikes">
+          <p>LIKES</p>
+        </div>
+      </div>
+
+      <div class="narrations_control" ng-repeat="narrator in upload " ng-click="">
+        <div class="nPlay_Button" ng-click="pathSelected(narrator.filepath)"><i class="material-icons">play_circle_outline</i></div>
+        <div class="nAdd_Playlist" ng-click="plusOne($index)"><i class="material-icons">favorite</i></div>
+        
+         <div class="nName">
+          <p>{{narrator.name}}</p>
+        </div>
+       
+        <div class="nLikes">
+          <p></p>
+        </div>
+      </div>
+
+    </div>
+  
+    <div class="page_commands">
+      <div class="plays"></div>
+      <div class="upload_button"><a href="#/register"><span>UPLOAD</span></a></div>
+    </div>
+  
+</div>
+<div class="Article_info">
+  <p class="article_title">{{articles.title}}</p>
+  <p class="article_author">{{articles.description}}</p>
+  <p class="article_published">Published on: {{articles.createdAt}} | Last Updated: {{articles.updatedAt}}</p>
+  
+  <p class="article_read">{{articles.text}}</p>
+</div>
+<div class="artlcle_comments">
+	
+	<p class="commentBody"></p>
+		
+</div>
+<div class="playbar_wrapper" ng-show="selected">
+		 <div class="audio-js-box vim-css" id="view-source">
+        <audio class="audio-js" controls preload ng-src="{{path}}">
+            
+      	
+			
+      		
+        </audio>
+      </div>
+	  </div>

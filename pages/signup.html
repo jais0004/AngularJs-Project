@@ -1,0 +1,138 @@
+   <div class="nav_wrapper">
+      <ul>
+        <p></p>
+        <li>
+          <a href="#/Browser">
+            <div class="nav_div">
+              <i class="material-icons md-48">store</i> <span class="nav_text">Home</span>
+            </div>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="#/Articles">
+            <div class="nav_div">
+              <i class="material-icons md-48">subject</i> <span class="nav_text">ARTICLES</span>
+            </div>
+          </a>
+        </li>
+       
+        <li>
+          <a href="#/Narrators">
+            <div class="nav_div">
+              <i class="material-icons md-48">hearing</i> <span class="nav_text">NARRATORS</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#/YourNarrations">
+            <div class="nav_div">
+              <i class="material-icons md-48">record_voice_over</i> <span class="nav_text">YOUR NARRATIONS</span>
+            </div>
+          </a>
+        </li>
+		 <li>
+          <a href="#/login">
+            <div class="nav_div">
+              <i class="material-icons md-48">perm_identity</i> <span class="nav_text">Log In</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+<div id="wrapper">
+				
+		<form name="signupForm" class="form-horizontal" role="form">
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <label for="username">Username</label>
+
+                            </div>
+                            <div class="col-sm-7">
+                                <input class="mdl-textfield__input" type="email" name="username" ng-model="users.username" required>
+								<span style="color:red" ng-show="signupForm.username.$dirty && signupForm.username.$invalid">
+								<span ng-show="signupForm.username.$error.required">Username is required.</span>
+								<span ng-show="signupForm.username.$error.email">Invalid email address.</span>
+								</span>
+                            </div>
+                            <div class="col-sm-5">
+                                <label for="pass">Password</label>
+
+                            </div>
+                            <div class="col-sm-7">
+                                <input class="mdl-textfield__input" type="password" id="pass" name="password" ng-model="users.password" required>
+								
+								<span style="color:red" ng-show="signupForm.password.$dirty && signupForm.password.$invalid">
+								<span ng-show="signupForm.password.$error.required">Password is required.</span>
+								
+								</span>
+                            </div>
+
+                            <div class="col-sm-5">
+                                <label for="cpass">Confirm Password</label>
+
+                            </div>
+                            <div class="col-sm-7">
+                                <input class="mdl-textfield__input" type="password" name="password2" id="cpass" ng-model="users.password2"  password-verify="users.password" required>
+								
+							   <span style="color:red" ng-show="signupForm.password2.$dirty && signupForm.password2.$invalid">
+								<span ng-show="signupForm.password2.$error.required">Password is required.</span>
+								
+								</span>
+								<span style="color:red" data-ng-show="signupForm.password2.$dirty && signupForm.password2.$error.passwordVerify && !signupForm.password2.$error.required"> Password does not match</span>
+                            </div>
+							 <div class="col-sm-5">
+                                <label for="username">FirstName</label>
+
+                            </div>
+                            <div class="col-sm-7">
+                                <input class="mdl-textfield__input" type="text" name="firstName" ng-model="users.firstName" required>
+								<span style="color:red" ng-show="signupForm.firstName.$dirty && signupForm.firstName.$invalid">
+								<span ng-show="signupForm.firstName.$error.required">FirstName is required.</span>
+								<span ng-show="signupForm.firstName.$error.email">Invalid FirstName.</span>
+								</span>
+                            </div>
+							<div class="col-sm-5">
+                                <label for="username">LastName</label>
+
+                            </div>
+                            <div class="col-sm-7">
+                                <input class="mdl-textfield__input" type="text" name="lastName" ng-model="users.lastName" required>
+								<span style="color:red" ng-show="signupForm.lastName.$dirty && signupForm.lastName.$invalid">
+								<span ng-show="signupForm.lastName.$error.required">LastName is required.</span>
+								<span ng-show="signupForm.lastName.$error.email">Invalid LastName.</span>
+								</span>
+                            </div>
+                            <div class="col-sm-5">
+
+
+                            </div>
+                            <div class="col-sm-7">
+                                <button class="mdl-button mdl-js-button mdl-button--raised" ng-click="loginuser(users)" ng-disabled="signupForm.$invalid">
+                                    Sign Up
+                                </button>
+								
+                            </div>
+							
+							 <div class="col-sm-12">
+				<span style="color:red" data-ng-show="error"> Sign up failed problem with {{errormsg}}. Please try again </span>
+
+                            </div>
+
+
+
+
+
+                        </div>
+
+
+                    </div>
+                    
+                </div>
+				</form>
+		</div><!-- End Wrapper -->

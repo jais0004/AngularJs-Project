@@ -1,0 +1,82 @@
+  <div class="nav_wrapper">
+      <ul>
+        <p></p>
+        <li>
+          <a href="#/Browser">
+            <div class="nav_div">
+              <i class="material-icons md-48">store</i> <span class="nav_text">Home</span>
+            </div>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="#/Browsers">
+            <div class="nav_div">
+              <i class="material-icons md-48">subject</i> <span class="nav_text">ARTICLES</span>
+            </div>
+          </a>
+        </li>
+       
+        <li>
+          <a href="#/Narrators">
+            <div class="nav_div">
+              <i class="material-icons md-48">hearing</i> <span class="nav_text">NARRATORS</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#/YourNarrations">
+            <div class="nav_div">
+              <i class="material-icons md-48">record_voice_over</i> <span class="nav_text">YOUR NARRATIONS</span>
+            </div>
+          </a>
+        </li>
+		 <li>
+          <a href ng-click="loginorlogout()">
+            <div class="nav_div">
+              <i class="material-icons md-48">perm_identity</i> <span class="nav_text">{{userStaus}}</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+	<header class="mainHeader">
+
+	  <div class="row">
+        <div class="col-md-4 col-md-offset-3">
+            <form action="" class="search-form">
+                <div class="form-group has-feedback">
+            		<label for="search" class="sr-only">Search</label>
+            		<input type="text" class="form-control" name="search" id="search" placeholder="search" ng-model="searchValue">
+              		<span class="glyphicon glyphicon-search form-control-feedback"></span>
+            	</div>
+            </form>
+        </div>
+    </div>
+</header>
+<div class="separator">
+  <div class="border_separator"></div>
+</div>
+<!----Spotlight on homepage---->
+<p> Articles</p>
+<div class="separator">
+  <div class="border_separator"></div>
+</div>
+
+<div class="spotlight_wrapper non-mobile">
+  <div class="spotlight">
+    <div class="spotlight_items" ng-repeat="spotlightitem in spotlights  | filter:searchValue">
+      <div class="spolight_description">
+
+        <a href ng-click="articleClick(spotlightitem)">
+        <p class="description_title">{{spotlightitem.title | uppercase}}</p>
+        </a>
+        <p class="description_info">{{spotlightitem.description}}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--------Charts on homepage------------>
